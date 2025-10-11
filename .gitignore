@@ -1,0 +1,30 @@
+# Portfolio Website .gitignore
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Log files
+*.log
+
+# Backup files
+*.bak
+*~
+
+# Development files
+node_modules/
+npm-debug.log*
+
+# Optional: Exclude backup HTML files
+index1.html
+starter-page.html
+
+# Optional: Exclude development README files
+Readme.txt

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Windows EC2 with RDP Security - Tyrone Joel Portfolio</title>
+  <meta name="description" content="Detailed case study of secure Windows Server deployment on EC2 with RDP access, security groups, and enterprise-grade remote desktop configuration.">
+  <meta name="keywords" content="AWS, EC2, Windows Server, RDP, Security Groups, Remote Desktop, Windows Infrastructure, Cloud Security">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Quicksand:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+
+        <div class="profile-img">
+          <img src="assets/img/profile/tyrone1.png" alt="" class="img-fluid rounded-circle">
+        </div>
+
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+          <h1 class="sitename">Tyrone Joel</h1>
+        </a>
+
+        <div class="social-links text-center">
+          <a href="https://github.com/tyronecloud" class="twitter"><i class="bi bi-github"></i></a>
+          <a href="mailto:tyronecloud@example.com" class="facebook"><i class="bi bi-envelope"></i></a>
+          <a href="https://linkedin.com/in/tyronecloud" class="instagram"><i class="bi bi-linkedin"></i></a>
+          <a href="https://aws.amazon.com/certification/" class="google-plus"><i class="bi bi-cloud-check"></i></a>
+        </div>
+
+        <ul>
+          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container d-lg-flex justify-content-between align-items-center">
+        <h1 class="mb-2 mb-lg-0">Portfolio Details</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Windows EC2 Security</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+          <div class="col-lg-6" data-aos="fade-right">
+            <div class="portfolio-details-media">
+              <div class="main-image">
+                <div class="portfolio-details-slider swiper init-swiper" data-aos="zoom-in">
+                  <script type="application/json" class="swiper-config">
+                    {
+                      "loop": true,
+                      "speed": 1000,
+                      "autoplay": {
+                        "delay": 6000
+                      },
+                      "effect": "creative",
+                      "creativeEffect": {
+                        "prev": {
+                          "shadow": true,
+                          "translate": [0, 0, -400]
+                        },
+                        "next": {
+                          "translate": ["100%", 0, 0]
+                        }
+                      },
+                      "slidesPerView": 1,
+                      "navigation": {
+                        "nextEl": ".swiper-button-next",
+                        "prevEl": ".swiper-button-prev"
+                      }
+                    }
+                  </script>
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <img src="https://github.com/user-attachments/assets/d21e342e-53fa-4980-aa07-de77a3a3c6af" alt="Windows EC2 Architecture" class="img-fluid">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="https://github.com/user-attachments/assets/7a8b57a8-758c-4d5e-9d35-feb8e7cddbcf" alt="EC2 Dashboard" class="img-fluid">
+                    </div>
+                    <div class="swiper-slide">
+                      <img src="https://github.com/user-attachments/assets/7b6d03e6-4f9f-4bed-98c3-e8b3b987256e" alt="Windows Server Desktop" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="swiper-button-prev"></div>
+                  <div class="swiper-button-next"></div>
+                </div>
+              </div>
+
+              <div class="thumbnail-grid" data-aos="fade-up" data-aos-delay="200">
+                <div class="row g-2 mt-3">
+                  <div class="col-3">
+                    <img src="https://github.com/user-attachments/assets/12a7fef2-0186-4187-a056-f22d487a14a6" alt="Windows AMI Selection" class="img-fluid glightbox">
+                  </div>
+                  <div class="col-3">
+                    <img src="https://github.com/user-attachments/assets/304fd5d4-7d4f-45dc-b80b-b9036ac610b1" alt="Security Group Configuration" class="img-fluid glightbox">
+                  </div>
+                  <div class="col-3">
+                    <img src="https://github.com/user-attachments/assets/3723e1e3-e454-4cef-a7e4-0e8f6da0d095" alt="RDP Connection" class="img-fluid glightbox">
+                  </div>
+                  <div class="col-3">
+                    <img src="https://github.com/user-attachments/assets/00dd905b-ff78-4825-a92d-677d58f9f3b4" alt="Password Decryption" class="img-fluid glightbox">
+                  </div>
+                </div>
+              </div>
+
+              <div class="tech-stack-badges" data-aos="fade-up" data-aos-delay="300">
+                <span>Windows Server</span>
+                <span>EC2</span>
+                <span>RDP</span>
+                <span>Security Groups</span>
+                <span>CloudWatch</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="portfolio-details-content">
+              <div class="project-meta">
+                <div class="badge-wrapper">
+                  <span class="project-badge">Infrastructure</span>
+                </div>
+                <div class="date-client">
+                  <div class="meta-item">
+                    <i class="bi bi-calendar-check"></i>
+                    <span>October 2024</span>
+                  </div>
+                  <div class="meta-item">
+                    <i class="bi bi-buildings"></i>
+                    <span>AWS Portfolio Project</span>
+                  </div>
+                </div>
+              </div>
+
+              <h2 class="project-title">Secure Windows EC2 with RDP Access</h2>
+              
+              <div class="project-buttons" style="margin: 20px 0;">
+                <a href="https://github.com/Tyjay00/aws-cloud-console-projects/blob/main/Launching%20and%20Securing%20a%20Windows%20EC2%20Instance%20with%20RDP%20Access/EC2%20Windows%20Server%20Deployment.md" class="btn btn-primary" target="_blank" style="background-color: #0366d6; border: none; padding: 12px 24px; border-radius: 6px; color: white; text-decoration: none; margin-right: 15px; display: inline-block; font-weight: 500;">
+                  View on GitHub
+                </a>
+                <a href="index.html#portfolio" class="btn btn-secondary" style="background-color: #f1f3f4; border: none; padding: 12px 24px; border-radius: 6px; color: #24292e; text-decoration: none; display: inline-block; font-weight: 500;">
+                  ← Back to Portfolio
+                </a>
+              </div>
+
+              <div class="project-overview">
+                <p class="lead">
+                  A secure Windows Server deployment on AWS EC2 with hardened RDP access, demonstrating enterprise-grade Windows infrastructure in the cloud with proper security controls and remote management capabilities.
+                </p>
+
+                <div class="accordion project-accordion" id="portfolio-details-projectAccordion">
+                  <div class="accordion-item" data-aos="fade-up">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#portfolio-details-collapse-1" aria-expanded="true" aria-controls="collapseOne">
+                        <i class="bi bi-windows me-2"></i> Project Overview
+                      </button>
+                    </h2>
+                    <div id="portfolio-details-collapse-1" class="accordion-collapse collapse show" data-bs-parent="#portfolio-details-projectAccordion">
+                      <div class="accordion-body">
+                        <p>This project demonstrates the deployment and securing of a Windows Server instance on AWS EC2 with Remote Desktop Protocol (RDP) access. The solution includes proper security group configuration, network isolation, and monitoring setup for enterprise Windows workloads.</p>
+                        <p>The implementation showcases best practices for Windows infrastructure on AWS, including security hardening, access control, and operational monitoring for production-ready Windows environments.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#portfolio-details-collapse-2" aria-expanded="false" aria-controls="collapseTwo">
+                        <i class="bi bi-exclamation-diamond me-2"></i> The Challenge
+                      </button>
+                    </h2>
+                    <div id="portfolio-details-collapse-2" class="accordion-collapse collapse" data-bs-parent="#portfolio-details-projectAccordion">
+                      <div class="accordion-body">
+                        <p>Organizations migrating Windows workloads to the cloud face unique security and management challenges. Key requirements included:</p>
+                        <ul>
+                          <li>Secure remote desktop access from specific IP ranges</li>
+                          <li>Proper Windows Server licensing and optimization</li>
+                          <li>Network-level security with defense in depth</li>
+                          <li>Monitoring and alerting for security events</li>
+                          <li>Cost optimization for Windows licensing</li>
+                          <li>Backup and disaster recovery planning</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#portfolio-details-collapse-3" aria-expanded="false" aria-controls="collapseThree">
+                        <i class="bi bi-award me-2"></i> The Solution
+                      </button>
+                    </h2>
+                    <div id="portfolio-details-collapse-3" class="accordion-collapse collapse" data-bs-parent="#portfolio-details-projectAccordion">
+                      <div class="accordion-body">
+                        <p>Implemented a comprehensive Windows infrastructure solution using:</p>
+                        <ul>
+                          <li><strong>EC2 Windows Server:</strong> Optimized instance with license-included AMI</li>
+                          <li><strong>Security Groups:</strong> Restrictive RDP access with IP whitelisting</li>
+                          <li><strong>VPC Configuration:</strong> Private subnet with NAT gateway for updates</li>
+                          <li><strong>Elastic IP:</strong> Static IP assignment for consistent access</li>
+                          <li><strong>CloudWatch:</strong> Monitoring for performance and security events</li>
+                          <li><strong>AWS Backup:</strong> Automated backup strategy for data protection</li>
+                        </ul>
+                        <p>This architecture provides secure, manageable Windows infrastructure with enterprise-grade security and operational capabilities.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="project-features" data-aos="fade-up" data-aos-delay="300">
+                <h3><i class="bi bi-stars"></i> Key Features</h3>
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Secure RDP Access</li>
+                      <li><i class="bi bi-check2-circle"></i> Network Isolation</li>
+                      <li><i class="bi bi-check2-circle"></i> Windows Optimization</li>
+                    </ul>
+                  </div>
+                  <div class="col-md-6">
+                    <ul class="feature-list">
+                      <li><i class="bi bi-check2-circle"></i> Automated Backups</li>
+                      <li><i class="bi bi-check2-circle"></i> Security Monitoring</li>
+                      <li><i class="bi bi-check2-circle"></i> Cost Optimization</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="cta-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="https://github.com/Tyjay00/aws-cloud-console-projects/blob/main/Launching%20and%20Securing%20a%20Windows%20EC2%20Instance%20with%20RDP%20Access/EC2%20Windows%20Server%20Deployment.md" class="btn-view-project" target="_blank">View on GitHub</a>
+                <a href="index.html#portfolio" class="btn-next-project">Back to Portfolio <i class="bi bi-arrow-left"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer dark-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Tyrone Joel</strong> <span>All Rights Reserved</span></p>
+      </div>
+      <div class="social-links d-flex justify-content-center">
+        <a href="https://github.com/tyronecloud"><i class="bi bi-github"></i></a>
+        <a href="mailto:tyronecloud@example.com"><i class="bi bi-envelope"></i></a>
+        <a href="https://linkedin.com/in/tyronecloud"><i class="bi bi-linkedin"></i></a>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
