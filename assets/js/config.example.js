@@ -1,0 +1,8 @@
+/**
+ * Configuration TEMPLATE file
+ * Copy this to config.js and add your actual API key
+ */
+
+const GEMINI_CONFIG = {
+  apiKey: 'YOUR_GEMINI_API_KEY_HERE'
+};
