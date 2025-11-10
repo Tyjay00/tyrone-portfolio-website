@@ -22,6 +22,9 @@ Thumbs.db
 node_modules/
 npm-debug.log*
 
+# API Keys and Sensitive Configuration
+assets/js/config.js
+
 # Optional: Exclude backup HTML files
 index1.html
 starter-page.html
