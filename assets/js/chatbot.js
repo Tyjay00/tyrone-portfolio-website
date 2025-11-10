@@ -122,9 +122,9 @@ Your goal is to help visitors understand Tyrone's cloud engineering capabilities
   }
   
   checkApiKey() {
+    // API key check - silently validate
     if (this.GEMINI_API_KEY === 'YOUR_GEMINI_API_KEY_HERE') {
-      console.warn('⚠️ Please set your Gemini API key in chatbot.js');
-      console.info('Get your free API key at: https://makersuite.google.com/app/apikey');
+      // API key not configured
     }
   }
   
@@ -197,7 +197,7 @@ Your goal is to help visitors understand Tyrone's cloud engineering capabilities
         this.addMessage(response, 'bot', true);
       }
     } catch (error) {
-      console.error('Error:', error);
+      // Error handling
       
       // Remove typing indicator
       typingIndicator.remove();
@@ -507,7 +507,7 @@ Your goal is to help visitors understand Tyrone's cloud engineering capabilities
   }
   
   getErrorMessage(error) {
-    console.error('Chatbot error:', error);
+    // Handle error silently
     
     if (error.message.includes('API Error')) {
       return `
@@ -652,7 +652,4 @@ Your goal is to help visitors understand Tyrone's cloud engineering capabilities
 // Initialize chatbot when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
   window.portfolioChatbot = new PortfolioChatbot();
-  console.log('✅ Portfolio Chatbot initialized');
-  console.log('💡 To enable AI responses, add your Gemini API key in chatbot.js');
-  console.log('🔗 Get your free API key: https://makersuite.google.com/app/apikey');
 });
