@@ -8,7 +8,7 @@ class PortfolioChatbot {
     // Gemini API Configuration
     // IMPORTANT: For production, use environment variables or a backend proxy
     this.GEMINI_API_KEY = this.getApiKey();
-    this.GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+    this.GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent';
     
     // DOM Elements
     this.chatbotToggle = document.getElementById('chatbot-toggle');
@@ -31,17 +31,17 @@ class PortfolioChatbot {
   }
   
   getApiKey() {
-    // For production portfolio site: API key is included but restricted in Google Cloud Console
-    // The key is restricted to only work on your domain (tyrone.studio)
+    // API key MUST be loaded from config.js file
+    // The config.js file is NOT committed to the repository (in .gitignore)
+    // For deployment, you need to manually add config.js to your production server
     
-    // Option 1: Try to get from a config file (if available)
     if (typeof GEMINI_CONFIG !== 'undefined' && GEMINI_CONFIG.apiKey) {
       return GEMINI_CONFIG.apiKey;
     }
     
-    // Option 2: Use embedded API key (restricted to your domain in Google Cloud Console)
-    // IMPORTANT: This key should be restricted to only work on https://www.tyrone.studio
-    return 'YOUR_GEMINI_API_KEY_HERE';
+    // If config is missing, show error to user
+    console.error('API configuration not found. Please ensure assets/js/config.js exists with your API key.');
+    return null;
   }
   
   buildPortfolioContext() {
