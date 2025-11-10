@@ -41,7 +41,7 @@ class PortfolioChatbot {
     
     // Option 2: Use embedded API key (restricted to your domain in Google Cloud Console)
     // IMPORTANT: This key should be restricted to only work on https://www.tyrone.studio
-    return 'AIzaSyA2xKdOFP-NK3IOndG-Dyc3USE1YyZ2Ixw';
+    return 'YOUR_GEMINI_API_KEY_HERE';
   }
   
   buildPortfolioContext() {
